@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dntolmvguseli"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7g6mn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4egs"]
+albedo_color = Color(1, 0.184314, 0.0980392, 1)
+
+[node name="Ball" type="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_7g6mn")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+material = SubResource("StandardMaterial3D_n4egs")
