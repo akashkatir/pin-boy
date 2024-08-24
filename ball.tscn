@@ -9,6 +9,7 @@ albedo_color = Color(1, 0.184314, 0.0980392, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_7g6mn")
+metadata/_edit_group_ = true
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
 material = SubResource("StandardMaterial3D_n4egs")
