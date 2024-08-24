@@ -8,8 +8,8 @@ albedo_color = Color(1, 0.184314, 0.0980392, 1)
 [node name="Ball" type="RigidBody3D"]
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_7g6mn")
 
-[node name="Model" type="CSGSphere3D" parent="."]
+[node name="Mesh" type="CSGSphere3D" parent="."]
 material = SubResource("StandardMaterial3D_n4egs")
