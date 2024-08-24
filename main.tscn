@@ -40,7 +40,10 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.415232, 9.56205)
 
 [node name="Flipper" parent="." instance=ExtResource("2_q38j6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.802793, -2.79188, 13.8015)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21773, -2.79188, 13.8015)
+
+[node name="Flipper2" parent="." instance=ExtResource("2_q38j6")]
+transform = Transform3D(-1, 0, 0, 0, 0.992538, -0.121939, 0, 0.121939, 0.992538, 2.45421, -3.0628, 14.498)
 
 [node name="Wall" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 11.2653, -0.0551649, 0.205878)
