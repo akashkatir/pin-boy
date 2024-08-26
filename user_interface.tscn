@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyppkeelb0g14"]
+
+[ext_resource type="Script" path="res://height_label.gd" id="1_j41xb"]
+
+[sub_resource type="Theme" id="Theme_1brxo"]
+default_font_size = 24
+
+[node name="UserInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1brxo")
+
+[node name="HeightLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Best height: 0m"
+script = ExtResource("1_j41xb")
