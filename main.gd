@@ -8,4 +8,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	$UserInterface/HeightLabel.update_max_height(-$Ball.position.z)
+	$UserInterface.update_height(-$Ball.position.z)
