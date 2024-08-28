@@ -1,21 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1tod5hx1ccnr"]
+[gd_scene load_steps=10 format=3 uid="uid://c1tod5hx1ccnr"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_5etbq"]
 [ext_resource type="PackedScene" uid="uid://08eqyhcm2p0x" path="res://flipper.tscn" id="2_q38j6"]
 [ext_resource type="PackedScene" uid="uid://dntolmvguseli" path="res://ball.tscn" id="2_qmag5"]
 [ext_resource type="PackedScene" uid="uid://bv4jg0gy6l78" path="res://bumper.tscn" id="3_u1na0"]
+[ext_resource type="PackedScene" path="res://user_interface.tscn" id="4_eovus"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gl01j"]
 size = Vector3(23.5842, 2, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3wqt7"]
+size = Vector3(30, 2, 30)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qbjiv"]
 size = Vector3(1.04858, 1, 30.0638)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6bk45"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_3wqt7"]
-size = Vector3(30, 2, 30)
-
 [node name="Main" type="Node3D"]
+script = ExtResource("1_5etbq")
+
+[node name="Ball" parent="." instance=ExtResource("2_qmag5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.415232, 9.56205)
+
+[node name="Flipper" parent="." instance=ExtResource("2_q38j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48815, -3.14476, 16.1594)
+
+[node name="Flipper2" parent="." instance=ExtResource("2_q38j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.27194, -1.58166, 8.29997)
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, -1, 0)
@@ -24,20 +36,9 @@ transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 
 transform = Transform3D(0.997366, 0, 0, 0, 0.997366, 4.47035e-08, 0, -4.47035e-08, 0.997366, 0.0349838, 0, 0)
 shape = SubResource("BoxShape3D_gl01j")
 
-[node name="CameraPivot" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18881, 0, 11.3235)
-
-[node name="Camera" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 6, 7)
-
-[node name="Ball" parent="." instance=ExtResource("2_qmag5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.48042, -2.86975, 13.3135)
-
-[node name="Flipper" parent="." instance=ExtResource("2_q38j6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48815, -3.14476, 16.1594)
-
-[node name="Flipper2" parent="." instance=ExtResource("2_q38j6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.27194, -1.58166, 8.29997)
+[node name="Mesh" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(0.724176, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_3wqt7")
 
 [node name="Wall" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 11.2653, -0.0551649, 0.205878)
@@ -72,6 +73,14 @@ shape = SubResource("BoxShape3D_qbjiv")
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 30, 0, 0, 0)
 mesh = SubResource("BoxMesh_6bk45")
 
+[node name="Bumper" parent="." instance=ExtResource("3_u1na0")]
+transform = Transform3D(-2.00906, -0.0612459, 1.5587, 0.342743, 2.46214, 0.538518, -1.52178, 0.635393, -1.93651, 6.81158, -0.945403, 7.75427)
+
+[node name="CameraPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.849239, 0.528009, 0, -0.528009, 0.849239, 2.83498, 5.41425, 17.5669)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+
 [node name="DirectionalLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 3, 3)
 shadow_enabled = true
@@ -81,5 +90,4 @@ transform = Transform3D(0.724176, 0, 0, 0, 0.258819, -0.965926, 0, 0.965926, 0.2
 mesh = SubResource("BoxMesh_3wqt7")
 skeleton = NodePath("../../Ground")
 
-[node name="Bumper" parent="." instance=ExtResource("3_u1na0")]
-transform = Transform3D(-2.00906, -0.0612459, 1.5587, 0.342743, 2.46214, 0.538518, -1.52178, 0.635393, -1.93651, 6.81158, -0.945403, 7.75427)
+[node name="UserInterface" parent="." instance=ExtResource("4_eovus")]
