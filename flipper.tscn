@@ -46,7 +46,7 @@ _data = {
 }
 
 [node name="Flipper" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+rotation_order = 0
 script = ExtResource("1_qo08a")
 metadata/_edit_group_ = true
 
