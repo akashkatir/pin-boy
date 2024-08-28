@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dssr65q5r1vj1"]
 
-[ext_resource type="PackedScene" uid="uid://c3kup8r1dcljf" path="res://bumper.tscn" id="1_m5w2k"]
-[ext_resource type="MeshLibrary" uid="uid://dbycwyktwot7q" path="res://map_mesh_library.tres" id="1_wskbf"]
+[ext_resource type="PackedScene" uid="uid://c3kup8r1dcljf" path="res://Map/bumper.tscn" id="1_m5w2k"]
+[ext_resource type="MeshLibrary" uid="uid://dbycwyktwot7q" path="res://Map/map_mesh_library.tres" id="1_wskbf"]
 
 [node name="Map" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)

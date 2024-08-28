@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dyubb5n3uhwk2"
-path="res://.godot/imported/flipper.blend-7b9b402266c8d5b6843e44b95d795de8.scn"
+path="res://.godot/imported/flipper.blend-e68f2dc6ff34797cf08cf483d0707453.scn"
 
 [deps]
 
-source_file="res://art/flipper.blend"
-dest_files=["res://.godot/imported/flipper.blend-7b9b402266c8d5b6843e44b95d795de8.scn"]
+source_file="res://Blender/flipper.blend"
+dest_files=["res://.godot/imported/flipper.blend-e68f2dc6ff34797cf08cf483d0707453.scn"]
 
 [params]
 

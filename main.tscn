@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://c1tod5hx1ccnr"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5etbq"]
-[ext_resource type="PackedScene" uid="uid://08eqyhcm2p0x" path="res://flipper.tscn" id="2_q38j6"]
+[ext_resource type="PackedScene" uid="uid://08eqyhcm2p0x" path="res://Map/flipper.tscn" id="2_q38j6"]
 [ext_resource type="PackedScene" uid="uid://dntolmvguseli" path="res://ball.tscn" id="2_qmag5"]
-[ext_resource type="PackedScene" uid="uid://dssr65q5r1vj1" path="res://map.tscn" id="4_bqlag"]
-[ext_resource type="PackedScene" uid="uid://cyppkeelb0g14" path="res://user_interface.tscn" id="4_eovus"]
-[ext_resource type="PackedScene" uid="uid://dyy5di5ddtar4" path="res://right_flipper.tscn" id="6_gxxou"]
+[ext_resource type="PackedScene" uid="uid://dssr65q5r1vj1" path="res://Map/map.tscn" id="4_bqlag"]
+[ext_resource type="PackedScene" uid="uid://cyppkeelb0g14" path="res://Interface/user_interface.tscn" id="4_eovus"]
+[ext_resource type="PackedScene" uid="uid://dyy5di5ddtar4" path="res://Map/right_flipper.tscn" id="6_gxxou"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kt02i"]
 bounce = 0.4

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cyppkeelb0g14"]
 
-[ext_resource type="Script" path="res://user_interface.gd" id="1_j41xb"]
+[ext_resource type="Script" path="res://Interface/user_interface.gd" id="1_j41xb"]
 
 [sub_resource type="Theme" id="Theme_1brxo"]
 default_font_size = 24
