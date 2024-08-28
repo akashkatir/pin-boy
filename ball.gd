@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("bumper"):
 		print(body)
-		var impulse = linear_velocity * 1.2
+		var impulse = linear_velocity * 1.5
 		impulse.y = 0
 
 		apply_central_impulse(impulse)
