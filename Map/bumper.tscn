@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3kup8r1dcljf"]
+[gd_scene load_steps=5 format=3 uid="uid://c3kup8r1dcljf"]
+
+[ext_resource type="Texture2D" uid="uid://dx3g331r0yrm6" path="res://Assets/KenneyPrototypeTextures/purple/texture_01.png" id="1_6idvx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eho45"]
 size = Vector3(3, 1, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x7yr0"]
-albedo_color = Color(0.904064, 0.686783, 0.988252, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_au0bw"]
+albedo_texture = ExtResource("1_6idvx")
+uv1_scale = Vector3(6, 2, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_14oxc"]
-material = SubResource("StandardMaterial3D_x7yr0")
+material = SubResource("StandardMaterial3D_au0bw")
 
 [node name="Bumper" type="StaticBody3D" groups=["bumper"]]
 

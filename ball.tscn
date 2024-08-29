@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dntolmvguseli"]
+[gd_scene load_steps=5 format=3 uid="uid://dntolmvguseli"]
 
 [ext_resource type="Script" path="res://ball.gd" id="1_w6bb2"]
+[ext_resource type="Texture2D" uid="uid://bju6gt1uqcgk8" path="res://Assets/KenneyPrototypeTextures/orange/texture_07.png" id="2_6jxxa"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7g6mn"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4egs"]
-albedo_color = Color(1, 0.184314, 0.0980392, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o17pt"]
+albedo_texture = ExtResource("2_6jxxa")
+uv1_scale = Vector3(3, 3, 3)
 
 [node name="Ball" type="RigidBody3D"]
 contact_monitor = true
@@ -17,6 +19,8 @@ metadata/_edit_group_ = true
 shape = SubResource("SphereShape3D_7g6mn")
 
 [node name="Mesh" type="CSGSphere3D" parent="."]
-material = SubResource("StandardMaterial3D_n4egs")
+radial_segments = 16
+rings = 8
+material = SubResource("StandardMaterial3D_o17pt")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

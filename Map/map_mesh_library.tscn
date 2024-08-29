@@ -1,11 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://djahufqt8ej8o"]
+[gd_scene load_steps=8 format=3 uid="uid://djahufqt8ej8o"]
+
+[ext_resource type="Texture2D" uid="uid://c7b1d8du08d6o" path="res://Assets/KenneyPrototypeTextures/dark/texture_01.png" id="2_qvgx0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o1mrq"]
+albedo_texture = ExtResource("2_qvgx0")
+uv1_scale = Vector3(2, 2, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lrhvp"]
+material = SubResource("StandardMaterial3D_o1mrq")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6rbnm"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ip6w0"]
+albedo_texture = ExtResource("2_qvgx0")
+uv1_scale = Vector3(2, 2, 2)
+
 [sub_resource type="PrismMesh" id="PrismMesh_xnwi8"]
+material = SubResource("StandardMaterial3D_ip6w0")
 left_to_right = 0.0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hjv2s"]

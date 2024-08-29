@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://08eqyhcm2p0x"]
+[gd_scene load_steps=10 format=3 uid="uid://08eqyhcm2p0x"]
 
 [ext_resource type="Script" path="res://Map/flipper.gd" id="1_qo08a"]
 [ext_resource type="ArrayMesh" uid="uid://dys88qv4yhbjc" path="res://Blender/flipper.obj" id="2_7bf0r"]
+[ext_resource type="Texture2D" uid="uid://b3tf8v1rr135r" path="res://Assets/KenneyPrototypeTextures/red/texture_10.png" id="2_l5ick"]
 
 [sub_resource type="Animation" id="Animation_8vq6o"]
 length = 0.15
@@ -57,6 +58,10 @@ _data = {
 "flip_inverted": SubResource("Animation_gf5mc")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hb7ay"]
+albedo_texture = ExtResource("2_l5ick")
+uv1_triplanar = true
+
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_af21a"]
 points = PackedVector3Array(-1.47052, -0.5, -0.156429, 0.972367, 0.492813, 0.110599, 0.968235, 0.491134, -0.118148, -1.47475, 0.49378, 0.14902, -0.718684, -0.472772, 0.464835, 0.968235, -0.49907, -0.118148, -1.10586, 0.479923, -0.48786, -0.75031, -0.468789, -0.468789, -1.11499, 0.485085, 0.485085, 0.69824, -0.47821, 0.287744, -1.35629, -0.5, 0.339311, 0.654112, 0.466336, -0.293259, 0.69824, 0.470273, 0.287744, 0.796677, -0.490075, -0.265674, -1.2702, -0.495373, -0.419758, -1.43903, 0.494794, -0.234114, 0.921111, -0.495213, 0.184817, -1.11499, -0.493022, 0.485085, -1.36348, 0.495288, 0.341543, -0.718684, 0.464835, 0.464835, -1.47052, -0.5, 0.148493, -0.75031, 0.460852, -0.468789, -1.10586, -0.48786, -0.48786, 0.869843, 0.481468, -0.227965, -1.35829, 0.492964, -0.347871, 0.879183, 0.485517, 0.221896, 0.970523, -0.5, 0.110426, -1.39083, -0.4985, -0.308162, 0.654112, -0.474272, -0.293259, -1.22285, -0.490516, 0.445051, -1.47242, 0.492836, -0.156666, -1.44287, 0.496405, 0.226921)
 
@@ -74,6 +79,7 @@ libraries = {
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+material_override = SubResource("StandardMaterial3D_hb7ay")
 mesh = ExtResource("2_7bf0r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
