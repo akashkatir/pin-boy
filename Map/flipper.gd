@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends Node3D
 
 @export var invert = false;
 # Time before a flip action can be pressed again and have an effect.
@@ -17,7 +17,6 @@ func _physics_process(_delta):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if invert:
-		rotation.y = -PI
 		animation_name = "flip_inverted"
 
 
