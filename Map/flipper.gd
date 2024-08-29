@@ -1,18 +1,24 @@
 extends CharacterBody3D
 
+@export var invert = false;
 # Time before a flip action can be pressed again and have an effect.
-var debounce_time = 0.4;
+@export var debounce_time = 0.4;
+
+var animation_name: String = "flip";
 
 func _physics_process(_delta):
 	if Input.is_action_pressed("flip"):
 		if ($AnimationPlayer.is_playing() and
 			$AnimationPlayer.current_animation_position > debounce_time):
 			$AnimationPlayer.stop()
-		$AnimationPlayer.play("flip")
+		
+		$AnimationPlayer.play(animation_name)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if invert:
+		rotation.y = -PI
+		animation_name = "flip_inverted"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
