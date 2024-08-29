@@ -20,7 +20,7 @@ physics_material_override = SubResource("PhysicsMaterial_kt02i")
 constant_force = Vector3(0, 10, 20)
 
 [node name="CameraPivot" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 8, -2)
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 8.32951, -0.380279)
 metadata/_edit_group_ = true
 
 [node name="Camera" type="Camera3D" parent="CameraPivot"]

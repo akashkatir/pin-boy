@@ -7,13 +7,17 @@ extends Node3D
 var animation_name: String = "flip";
 
 func _physics_process(_delta):
-	if Input.is_action_pressed("flip"):
-		if ($AnimationPlayer.is_playing() and
-			$AnimationPlayer.current_animation_position > debounce_time):
-			$AnimationPlayer.stop()
+	if Input.is_action_pressed("left_flip") and !invert:
+		play_animation()
+	elif Input.is_action_just_pressed("right_flip") and invert:
+		play_animation()
 		
-		$AnimationPlayer.play(animation_name)
-
+func play_animation() -> void:
+	if ($AnimationPlayer.is_playing() and
+		$AnimationPlayer.current_animation_position > debounce_time):
+		$AnimationPlayer.stop()
+		
+	$AnimationPlayer.play(animation_name)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if invert:
