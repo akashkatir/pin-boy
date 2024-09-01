@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://djrwu6kuf1att"]
+
+[ext_resource type="Script" path="res://Map/piston.gd" id="1_bhdmk"]
+[ext_resource type="Texture2D" uid="uid://cr07dni311ab3" path="res://Assets/KenneyPrototypeTextures/orange/texture_02.png" id="1_p7d1w"]
+
+[sub_resource type="Animation" id="Animation_rorqj"]
+resource_name = "fire"
+length = 0.25
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.24),
+"transitions": PackedFloat32Array(4.5948, 3.24901, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 4), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cklch"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g8uh7"]
+_data = {
+"RESET": SubResource("Animation_cklch"),
+"fire": SubResource("Animation_rorqj")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7c17"]
+albedo_texture = ExtResource("1_p7d1w")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wqiqb"]
+material = SubResource("StandardMaterial3D_n7c17")
+size = Vector3(1, 1, 0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_feryw"]
+points = PackedVector3Array(-0.492544, -0.492544, -0.25, 0.477152, 0.477152, 0.25, 0.477152, -0.477152, 0.25, 0.492544, 0.492544, -0.25, -0.477152, 0.477152, 0.25, 0.492544, -0.492544, -0.25, -0.492544, 0.492544, -0.25, -0.477152, -0.477152, 0.25)
+
+[node name="Piston" type="Node3D"]
+script = ExtResource("1_bhdmk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g8uh7")
+}
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
+mesh = SubResource("BoxMesh_wqiqb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
+shape = SubResource("ConvexPolygonShape3D_feryw")
