@@ -5,7 +5,7 @@
 
 [sub_resource type="Animation" id="Animation_rorqj"]
 resource_name = "fire"
-length = 0.25
+length = 0.08
 step = 0.02
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -14,10 +14,10 @@ tracks/0/path = NodePath("AnimatableBody3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.08, 0.24),
-"transitions": PackedFloat32Array(4.5948, 3.24901, 1),
+"times": PackedFloat32Array(0, 0.08),
+"transitions": PackedFloat32Array(4.5948, 3.24901),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5)]
 }
 
 [sub_resource type="Animation" id="Animation_cklch"]
