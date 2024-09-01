@@ -5,7 +5,11 @@ extends Node3D
 func _ready() -> void:
 	pass  # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
+	if out_of_bounds($Ball.position):
+		$Ball.position = $BallSpawn.position
+		$Ball.linear_velocity = Vector3.ZERO
 	$UserInterface.update_height(-$Ball.position.z)
+	
+func out_of_bounds(position: Vector3) -> bool:
+	return position.y < -1 or position.z > 1
