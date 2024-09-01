@@ -16,9 +16,11 @@ script = ExtResource("1_w6bb2")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 shape = SubResource("SphereShape3D_7g6mn")
 
 [node name="Mesh" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 radial_segments = 16
 rings = 8
 material = SubResource("StandardMaterial3D_o17pt")

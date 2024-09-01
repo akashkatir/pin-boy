@@ -49,8 +49,8 @@ uv1_scale = Vector3(2, 2, 2)
 material = SubResource("StandardMaterial3D_n7c17")
 size = Vector3(1, 1, 0.5)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_feryw"]
-points = PackedVector3Array(-0.492544, -0.492544, -0.25, 0.477152, 0.477152, 0.25, 0.477152, -0.477152, 0.25, 0.492544, 0.492544, -0.25, -0.477152, 0.477152, 0.25, 0.492544, -0.492544, -0.25, -0.492544, 0.492544, -0.25, -0.477152, -0.477152, 0.25)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sodk0"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
 
 [node name="Piston" type="Node3D"]
 script = ExtResource("1_bhdmk")
@@ -67,5 +67,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
 mesh = SubResource("BoxMesh_wqiqb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
-shape = SubResource("ConvexPolygonShape3D_feryw")
+shape = SubResource("ConvexPolygonShape3D_sodk0")

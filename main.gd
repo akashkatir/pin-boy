@@ -11,5 +11,5 @@ func _physics_process(_delta: float) -> void:
 		$Ball.linear_velocity = Vector3.ZERO
 	$UserInterface.update_height(-$Ball.position.z)
 	
-func out_of_bounds(position: Vector3) -> bool:
-	return position.y < -1 or position.z > 1
+func out_of_bounds(pos: Vector3) -> bool:
+	return pos.y < -1 or pos.z > 1
