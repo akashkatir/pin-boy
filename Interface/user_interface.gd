@@ -1,5 +1,6 @@
 extends Control
 
+
 var best_height: int = 0;  # Highest point reached in meters.
 
 func update_height(height: float):
