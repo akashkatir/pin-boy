@@ -15,7 +15,13 @@ grow_vertical = 2
 theme = SubResource("Theme_1brxo")
 script = ExtResource("1_j41xb")
 
-[node name="BestHeightLabel" type="Label" parent="."]
+[node name="HUD" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BestHeightLabel" type="Label" parent="HUD"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -24,7 +30,7 @@ offset_bottom = 54.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Best height: 0m"
 
-[node name="CurrentHeightLabel" type="Label" parent="."]
+[node name="CurrentHeightLabel" type="Label" parent="HUD"]
 layout_mode = 0
 offset_left = 19.0
 offset_top = 66.0
@@ -32,3 +38,47 @@ offset_right = 238.0
 offset_bottom = 100.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Current height: 0m"
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.228511, 0.228511, 0.228511, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="PinBoyTitle" type="Label" parent="MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Pin Boy"
+
+[node name="StartGame" type="Label" parent="MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Press any key to start"
