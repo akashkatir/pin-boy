@@ -3,7 +3,6 @@ extends Node3D
 
 @export var is_playing = false
 
-
 func _ready() -> void:
 	$UserInterface.show_menu()
 

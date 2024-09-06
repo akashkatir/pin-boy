@@ -1,5 +1,6 @@
 extends Node3D
 
+
 @export var right_flipper = false;
 # Time before a flip action can be pressed again and have an effect.
 @export var debounce_time = 0.4;
