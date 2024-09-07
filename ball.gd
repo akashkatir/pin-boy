@@ -7,10 +7,9 @@ func _physics_process(_delta: float) -> void:
 	linear_velocity.z = clamp(linear_velocity.z, -30, 30)
 
 func _on_body_entered(body: Node) -> void:
-	print(body.get_groups())
 	if body.is_in_group("bumper"):
 		apply_central_impulse(linear_velocity * 1.5)
-	if body.is_in_group("boostCube2"):
-		print("Boost cube entered")
+	if body.is_in_group("boost"):
+		print("Touched boost")
 		var velocity_multiplier = Vector3(3,0,0)
 		linear_velocity *= velocity_multiplier

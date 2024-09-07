@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvsblnp52f8n0"]
+
+[ext_resource type="Texture2D" uid="uid://bf7udtiuigw6i" path="res://Assets/KenneyPrototypeTextures/orange/texture_03.png" id="2_0ueuq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkpcb"]
+albedo_texture = ExtResource("2_0ueuq")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dxthy"]
+material = SubResource("StandardMaterial3D_wkpcb")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6rbnm"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="BoostMeshLibrary" type="Node3D"]
+
+[node name="1x1Boost" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+mesh = SubResource("BoxMesh_dxthy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="1x1Boost"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="1x1Boost/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_6rbnm")

@@ -4,14 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://bju6gt1uqcgk8" path="res://Assets/KenneyPrototypeTextures/orange/texture_07.png" id="2_6jxxa"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7g6mn"]
+margin = 0.1
+radius = 0.55
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o17pt"]
 albedo_texture = ExtResource("2_6jxxa")
 uv1_scale = Vector3(3, 3, 3)
 
 [node name="Ball" type="RigidBody3D"]
+continuous_cd = true
 contact_monitor = true
-max_contacts_reported = 2
+max_contacts_reported = 1
 script = ExtResource("1_w6bb2")
 metadata/_edit_group_ = true
 
