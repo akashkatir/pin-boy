@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1tod5hx1ccnr"]
+[gd_scene load_steps=6 format=3 uid="uid://c1tod5hx1ccnr"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5etbq"]
 [ext_resource type="PackedScene" uid="uid://dntolmvguseli" path="res://ball.tscn" id="2_qmag5"]
 [ext_resource type="PackedScene" uid="uid://dssr65q5r1vj1" path="res://Map/map.tscn" id="4_bqlag"]
 [ext_resource type="PackedScene" uid="uid://cyppkeelb0g14" path="res://Interface/user_interface.tscn" id="4_eovus"]
 [ext_resource type="Script" path="res://camera_pivot.gd" id="4_j6an8"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kt02i"]
-bounce = 0.4
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_5etbq")
@@ -21,7 +18,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0.5, -7)
 [node name="Ball" parent="." instance=ExtResource("2_qmag5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0.5, -7)
 axis_lock_linear_y = true
-physics_material_override = SubResource("PhysicsMaterial_kt02i")
 constant_force = Vector3(0, 10, 20)
 
 [node name="CameraPivot" type="Marker3D" parent="." node_paths=PackedStringArray("ball")]
