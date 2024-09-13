@@ -11,5 +11,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var ball_position = ball.global_transform.origin
 	
-	#global_transform.origin.z = ball_position.z + 7
-	global_transform.origin.z = lerp(global_transform.origin.z, ball_position.z + 7, 5 * delta)
+	global_transform.origin.z = lerp(
+		global_transform.origin.z, ball_position.z + 5, delta)
