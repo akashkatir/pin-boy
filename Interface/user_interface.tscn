@@ -1,9 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cyppkeelb0g14"]
 
 [ext_resource type="Script" path="res://Interface/user_interface.gd" id="1_j41xb"]
-
-[sub_resource type="Theme" id="Theme_1brxo"]
-default_font_size = 24
+[ext_resource type="Theme" uid="uid://pwmujfwld34w" path="res://Interface/user_interface.tres" id="1_yr66h"]
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -12,31 +10,50 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_1brxo")
+theme = ExtResource("1_yr66h")
 script = ExtResource("1_j41xb")
 
 [node name="HUD" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="BestHeightLabel" type="Label" parent="HUD"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 200.0
-offset_bottom = 54.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="MarginContainer" type="MarginContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TimeLabel" type="Label" parent="HUD/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Time: 00:00.000"
+
+[node name="HeightLabel" type="Label" parent="HUD/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Height: 0m"
+
+[node name="BestHeightLabel" type="Label" parent="HUD/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Best height: 0m"
-
-[node name="CurrentHeightLabel" type="Label" parent="HUD"]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 66.0
-offset_right = 238.0
-offset_bottom = 100.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Current height: 0m"
 
 [node name="MainMenu" type="Control" parent="."]
 layout_mode = 1
@@ -53,7 +70,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.228511, 0.228511, 0.228511, 1)
+color = Color(0.580392, 0.180392, 0.94902, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
 layout_mode = 1
