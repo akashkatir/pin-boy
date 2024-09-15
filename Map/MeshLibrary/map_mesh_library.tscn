@@ -4,9 +4,10 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o1mrq"]
 albedo_texture = ExtResource("1_yv6ro")
-uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_lrhvp"]
+lightmap_size_hint = Vector2i(14, 21)
 material = SubResource("StandardMaterial3D_o1mrq")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6rbnm"]
@@ -14,7 +15,7 @@ points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ip6w0"]
 albedo_texture = ExtResource("1_yv6ro")
-uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
 
 [sub_resource type="PrismMesh" id="PrismMesh_xnwi8"]
 material = SubResource("StandardMaterial3D_ip6w0")
@@ -28,7 +29,7 @@ load_path = "res://.godot/imported/texture_01.png-c85e874bca51c00a7ce0c55d9f4b86
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efsvr"]
 albedo_texture = SubResource("CompressedTexture2D_2bcq0")
-uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
 
 [sub_resource type="PrismMesh" id="PrismMesh_pnb5d"]
 material = SubResource("StandardMaterial3D_efsvr")
@@ -38,6 +39,7 @@ points = PackedVector3Array(-0.5, -0.5, -0.5, 0.0146517, 0.470697, 0.470697, 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfwq2"]
 albedo_texture = ExtResource("1_yv6ro")
+uv1_triplanar = true
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_1gdo6"]
 material = SubResource("StandardMaterial3D_yfwq2")
