@@ -4,6 +4,7 @@ extends Node3D
 @export var right_flipper = false;
 # Time before a flip action can be pressed again and have an effect.
 @export var debounce_time = 0.4;
+@export var flipper_sfx: NodePath
 
 var action_name: String = "left_flip"
 var animation_name: String = "left_flip";
@@ -11,6 +12,7 @@ var animation_name: String = "left_flip";
 func _physics_process(_delta):
 	if Input.is_action_just_pressed(action_name):
 		play_animation()
+		get_node(flipper_sfx).play()
 	if Input.is_action_just_released(action_name):
 		reset_animation()
 		

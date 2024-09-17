@@ -2,6 +2,7 @@ extends Node3D
 
 
 @export var is_playing = false
+@export var coin_sfx: NodePath
 
 func _ready() -> void:
 	$UserInterface.show_menu()
@@ -24,6 +25,7 @@ func handle_menu() -> void:
 		if Input.is_anything_pressed():
 			spawn_ball()
 			$UserInterface.show_game()
+			get_node(coin_sfx).play()
 			is_playing = true
 			
 func spawn_ball() -> void:

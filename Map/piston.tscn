@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://djrwu6kuf1att"]
+[gd_scene load_steps=10 format=3 uid="uid://djrwu6kuf1att"]
 
 [ext_resource type="Script" path="res://Map/piston.gd" id="1_bhdmk"]
 [ext_resource type="Texture2D" uid="uid://cr07dni311ab3" path="res://Assets/KenneyPrototypeTextures/orange/texture_02.png" id="1_p7d1w"]
+[ext_resource type="AudioStream" uid="uid://bf2wc1iigxe0e" path="res://Assets/Gate1.mp3" id="3_bi7di"]
 
 [sub_resource type="Animation" id="Animation_cklch"]
 length = 0.001
@@ -54,6 +55,7 @@ points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5
 
 [node name="Piston" type="Node3D"]
 script = ExtResource("1_bhdmk")
+piston_sfx = NodePath("AudioStreamPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -68,3 +70,6 @@ mesh = SubResource("BoxMesh_wqiqb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
 shape = SubResource("ConvexPolygonShape3D_sodk0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bi7di")

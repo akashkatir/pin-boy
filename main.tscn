@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1tod5hx1ccnr"]
+[gd_scene load_steps=8 format=3 uid="uid://c1tod5hx1ccnr"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5etbq"]
 [ext_resource type="PackedScene" uid="uid://dntolmvguseli" path="res://ball.tscn" id="2_qmag5"]
 [ext_resource type="PackedScene" uid="uid://dssr65q5r1vj1" path="res://Map/map.tscn" id="4_bqlag"]
 [ext_resource type="PackedScene" uid="uid://cyppkeelb0g14" path="res://Interface/user_interface.tscn" id="4_eovus"]
 [ext_resource type="Script" path="res://camera_pivot.gd" id="4_j6an8"]
+[ext_resource type="AudioStream" uid="uid://nh5wscb82fp1" path="res://Assets/CoinIn5.mp3" id="6_ffot5"]
+[ext_resource type="AudioStream" uid="uid://cmibs1y53gsfh" path="res://Assets/Pixel Dreams.mp3" id="7_m4nah"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_5etbq")
+coin_sfx = NodePath("CoinSfx")
 
 [node name="Map" parent="." instance=ExtResource("4_bqlag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
@@ -34,3 +37,11 @@ transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 16.2142
 shadow_enabled = true
 
 [node name="UserInterface" parent="." instance=ExtResource("4_eovus")]
+
+[node name="CoinSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ffot5")
+
+[node name="MainSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_m4nah")
+volume_db = -11.243
+autoplay = true

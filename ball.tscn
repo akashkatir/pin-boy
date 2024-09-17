@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dntolmvguseli"]
+[gd_scene load_steps=6 format=3 uid="uid://dntolmvguseli"]
 
 [ext_resource type="Script" path="res://ball.gd" id="1_w6bb2"]
 [ext_resource type="Texture2D" uid="uid://f60gdcm0pg28" path="res://Assets/Stephen.png" id="2_38c0h"]
+[ext_resource type="AudioStream" uid="uid://dyh83vro75ivb" path="res://Assets/Bumper.mp3" id="3_revpp"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7g6mn"]
 margin = 0.1
@@ -16,6 +17,7 @@ continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_w6bb2")
+bumper_sfx = NodePath("BumperSfx")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape" type="CollisionShape3D" parent="."]
@@ -27,5 +29,9 @@ transform = Transform3D(-0.89868, -0.000948314, 0.0487256, -0.0487246, -0.000943
 radial_segments = 16
 rings = 8
 material = SubResource("StandardMaterial3D_o17pt")
+
+[node name="BumperSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_revpp")
+volume_db = -7.495
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

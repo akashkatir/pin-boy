@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://08eqyhcm2p0x"]
+[gd_scene load_steps=11 format=3 uid="uid://08eqyhcm2p0x"]
 
 [ext_resource type="Script" path="res://Map/flipper.gd" id="1_qo08a"]
 [ext_resource type="ArrayMesh" uid="uid://dys88qv4yhbjc" path="res://Blender/flipper.obj" id="2_7bf0r"]
 [ext_resource type="Texture2D" uid="uid://b3tf8v1rr135r" path="res://Assets/KenneyPrototypeTextures/red/texture_10.png" id="2_l5ick"]
+[ext_resource type="AudioStream" uid="uid://cvrv2ok5uqniv" path="res://Assets/FlipperUp1.mp3" id="4_lxo6f"]
 
 [sub_resource type="Animation" id="Animation_8vq6o"]
 length = 0.15
@@ -69,6 +70,7 @@ points = PackedVector3Array(-1.47052, -0.5, -0.156429, 0.972367, 0.492813, 0.110
 
 [node name="Flipper" type="Node3D"]
 script = ExtResource("1_qo08a")
+flipper_sfx = NodePath("flipperSfx")
 metadata/_edit_group_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -88,3 +90,8 @@ mesh = ExtResource("2_7bf0r")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_af21a")
+
+[node name="flipperSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lxo6f")
+volume_db = -14.991
+pitch_scale = 1.1
