@@ -5,12 +5,16 @@ var best_height: int = 0  # Highest point reached in meters.
 var time: float = 0.0
 
 func show_game() -> void:
+	reset_timer()
 	$HUD.show()
 	$MainMenu.hide()
 
 func show_menu() -> void:
 	$HUD.hide()
 	$MainMenu.show()
+	
+func reset_timer() -> void:
+	time = 0.0
 
 func update_height(height: float):
 	height = int(height)  # Truncate from float.

@@ -13,6 +13,7 @@ func _physics_process(_delta: float) -> void:
 	if out_of_bounds($Ball.position):
 		spawn_ball()
 	if Input.is_action_just_released("respawn"):
+		$UserInterface.reset_timer()
 		spawn_ball()
 	$UserInterface.update_height(-$Ball.position.z)
 	
