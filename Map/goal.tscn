@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://e02uixnr6qie"]
+
+[ext_resource type="Texture2D" uid="uid://byo34u6e32lom" path="res://Assets/KenneyPrototypeTextures/orange/texture_09.png" id="1_u50to"]
+[ext_resource type="Script" path="res://Map/goal.gd" id="1_vjgcj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnvi0"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.270588)
+albedo_texture = ExtResource("1_u50to")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_tuw17"]
+material = SubResource("StandardMaterial3D_xnvi0")
+size = Vector3(5, 1, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q2t6n"]
+points = PackedVector3Array(-2.35735, -0.5, -0.5, 2.53869, 0.571429, 0.571429, 2.53869, 0.571429, -0.539683, -2.53869, 0.571429, 0.571429, 2.53869, -0.539683, 0.571429, -2.53869, 0.571429, -0.539683, -2.53869, -0.539683, 0.571429, 2.35735, -0.5, -0.5)
+
+[node name="Goal" type="Node3D"]
+script = ExtResource("1_vjgcj")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("BoxMesh_tuw17")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("ConvexPolygonShape3D_q2t6n")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
