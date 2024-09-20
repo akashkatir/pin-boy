@@ -5,6 +5,7 @@ extends Node3D
 @export var coin_sfx: NodePath
 
 func _ready() -> void:
+	$Map/Goal.win.connect(_on_win)
 	$UserInterface.show_menu()
 
 func _physics_process(_delta: float) -> void:
@@ -16,7 +17,10 @@ func _physics_process(_delta: float) -> void:
 		$UserInterface.reset_timer()
 		spawn_ball()
 	$UserInterface.update_height(-$Ball.position.z)
-	
+
+func _on_win() -> void:
+	print('You win!')
+
 func handle_menu() -> void:
 	if is_playing:
 		if Input.is_action_just_released("menu"):

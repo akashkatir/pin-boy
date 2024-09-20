@@ -8,7 +8,5 @@ func _physics_process(_delta: float) -> void:
 	linear_velocity.z = clamp(linear_velocity.z, -50, 50)
 
 func _on_body_entered(body: Node3D) -> void:
-	print("Collided with: ", body.name)
-	
 	if body.name == "BumperMap":
 		get_node(bumper_sfx).play()

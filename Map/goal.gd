@@ -1,5 +1,7 @@
 extends Node3D
 
+signal win()
+
 @export var win_countdown_seconds: float = 2.0
 
 var countdown: float = win_countdown_seconds
@@ -9,10 +11,10 @@ func _physics_process(delta: float) -> void:
 	if is_in_goal:
 		countdown -= delta
 		if countdown < 0:
-			win()
+			emit_win()
 
-func win() -> void:
-	print('You win!')
+func emit_win() -> void:
+	win.emit()
 	reset_timer()
 	
 func start_timer() -> void:
