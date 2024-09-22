@@ -8,10 +8,15 @@ func show_game() -> void:
 	reset_timer()
 	$HUD.show()
 	$MainMenu.hide()
+	$WinScreen.hide()
 
 func show_menu() -> void:
 	$HUD.hide()
 	$MainMenu.show()
+	
+func show_win_screen() ->  void:
+	$HUD.hide()
+	$WinScreen.show()
 	
 func reset_timer() -> void:
 	time = 0.0

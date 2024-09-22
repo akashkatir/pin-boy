@@ -20,6 +20,8 @@ func _physics_process(_delta: float) -> void:
 
 func _on_win() -> void:
 	print('You win!')
+	$UserInterface.show_win_screen()
+	is_playing = false
 
 func handle_menu() -> void:
 	if is_playing:
