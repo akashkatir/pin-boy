@@ -19,7 +19,6 @@ func _physics_process(_delta: float) -> void:
 	$UserInterface.update_height(-$Ball.position.z)
 
 func _on_win() -> void:
-	print('You win!')
 	$UserInterface.show_win_screen()
 	is_playing = false
 
