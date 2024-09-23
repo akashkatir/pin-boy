@@ -15,6 +15,7 @@ func show_menu() -> void:
 	$MainMenu.show()
 	
 func show_win_screen() ->  void:
+	$WinScreen/MarginContainer/VBoxContainer/TimeLabel.text = get_time_string()
 	$HUD.hide()
 	$WinScreen.show()
 	
@@ -26,10 +27,13 @@ func update_height(height: float):
 	best_height = max(best_height, height)
 	$HUD/MarginContainer/VBoxContainer/HeightLabel.text = "Current height: %sm" % height
 	$HUD/MarginContainer/VBoxContainer/BestHeightLabel.text = "Best height: %sm" % best_height
-	
-func _process(delta: float) -> void:
-	time += delta
+
+func get_time_string() -> String:
 	var millis = int(fmod(time, 1) * 100)
 	var seconds = int(fmod(time, 60))
 	var minutes = int(fmod(time, 3600) / 60)
-	$HUD/MarginContainer/VBoxContainer/TimeLabel.text = "Time: %02d:%02d.%03d" % [minutes, seconds, millis]
+	return "Time: %02d:%02d.%03d" % [minutes, seconds, millis]
+
+func _process(delta: float) -> void:
+	time += delta
+	$HUD/MarginContainer/VBoxContainer/TimeLabel.text = get_time_string()

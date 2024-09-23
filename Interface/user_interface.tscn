@@ -100,7 +100,6 @@ theme_override_font_sizes/font_size = 36
 text = "Press any key to start"
 
 [node name="WinScreen" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -145,4 +144,10 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Press any key to restart"
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="WinScreen/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Time: 00:00.000"
 horizontal_alignment = 1
